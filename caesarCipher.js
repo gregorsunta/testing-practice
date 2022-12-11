@@ -55,6 +55,7 @@ const caesarCipher = function (str) {
     'Y',
     'Z',
   ];
+  const punctuations = [' ', '.', ','];
   const cipher = function (str) {
     const arr = Array.from(str);
     const cipherLowerCase = function (letter) {
@@ -75,6 +76,11 @@ const caesarCipher = function (str) {
       // let isUpperCase = undefined;
       const isUpperCase = () =>
         upperLetters.indexOf(letter) === -1 ? false : true;
+      const isPunctuation = () =>
+        punctuations.indexOf(letter) === -1 ? false : true;
+      if (isPunctuation(letter)) {
+        return letter;
+      }
       if (isUpperCase()) {
         return cipherUppercase(letter);
       } else if (!isUpperCase()) {
