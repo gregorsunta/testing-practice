@@ -73,7 +73,6 @@ const caesarCipher = function (str) {
       return upperLetters[index + 1];
     };
     const arr2 = arr.map((letter) => {
-      // let isUpperCase = undefined;
       const isUpperCase = () =>
         upperLetters.indexOf(letter) === -1 ? false : true;
       const isPunctuation = () =>
@@ -87,13 +86,10 @@ const caesarCipher = function (str) {
         return cipherLowerCase(letter);
       }
     });
-    console.log(arr2.join(''));
-
     return arr2.join('');
   };
   return {
     cipher,
   };
 };
-const caesar = caesarCipher();
 module.exports = caesarCipher;
